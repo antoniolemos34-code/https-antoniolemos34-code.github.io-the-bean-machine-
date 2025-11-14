@@ -16,13 +16,13 @@
     * { box-sizing: border-box; margin:0; padding:0; }
 
     :root {
-      --bg: #f5efe6;          /* fundo creme */
+      --bg: #f5efe6;          
       --bg-soft: #efe3d4;
-      --panel: #ffffff;       /* cartões brancos */
+      --panel: #ffffff;       
       --panel-soft: #f8f0e4;
-      --text: #2f2319;        /* castanho escuro */
+      --text: #2f2319;        
       --muted: #7a6450;
-      --accent: #c18b38;      /* dourado café */
+      --accent: #c18b38;      
       --accent-2: #a36924;
       --accent-green: #2b7b4f;
       --border: #e0d1c1;
@@ -92,7 +92,200 @@
 
     section { padding: 70px 0; }
 
-    /* HERO */
+    .hero {
+      padding: 110px 0 80px;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5.2vw, 46px);
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+    .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:0.85rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .hero-badge span {
+      padding:3px 9px;
+      border-radius:999px;
+      border:1px solid var(--accent);
+      color: var(--accent);
+      font-weight:600;
+      background: #fff7ea;
+    }
+
+    .cta-row { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:8px; }
+    .btn-primary {
+      background: linear-gradient(180deg, var(--accent), var(--accent-2));
+      color:#fffdf8;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight:700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 26px rgba(141,90,32,0.35);
+      border:none;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .btn-outline {
+      padding: 10px 16px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background: var(--panel-soft);
+      color: var(--muted);
+      font-size:0.9rem;
+    }
+
+    .hero-photo {
+      background: var(--panel);
+      border-radius: 20px;
+      border:1px solid var(--border);
+      padding: 14px 14px 0;
+      box-shadow: 0 18px 45px rgba(126,90,48,0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo-top {
+      font-size:0.8rem;
+      color: var(--muted);
+      margin-bottom:8px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .hero-photo-main {
+      border-radius: 16px 16px 0 0;
+      background:#f5e6d3;
+      min-height: 210px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#8c7359;
+      font-size:0.9rem;
+      text-align:center;
+      padding:16px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-photo-main span {
+      opacity:0.85;
+    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Bean Machine Jersey – Mobile Coffee Bar</title>
+
+  <meta name="description" content="The Bean Machine Jersey – mobile coffee van serving speciality coffee, teas and treats across Jersey. Available for events and daily stops.">
+  <meta name="author" content="The Bean Machine Jersey" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
+
+    :root {
+      --bg: #f5efe6;          
+      --bg-soft: #efe3d4;
+      --panel: #ffffff;       
+      --panel-soft: #f8f0e4;
+      --text: #2f2319;        
+      --muted: #7a6450;
+      --accent: #c18b38;      
+      --accent-2: #a36924;
+      --accent-green: #2b7b4f;
+      --border: #e0d1c1;
+      --link: #9a6120;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:
+        radial-gradient(600px 400px at 10% 0, #fdf6ec, transparent 55%),
+        radial-gradient(600px 400px at 90% 0, #f3e1c9, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245,239,230,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:0.4px;
+      color: var(--text);
+    }
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: radial-gradient(circle at 30% 0, #ffffffaa, #f0dcc4 60%);
+      font-size: 18px;
+    }
+    nav a {
+      margin-left: 18px;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+    nav a:hover { opacity:1; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section { padding: 70px 0; }
+
     .hero {
       padding: 110px 0 80px;
     }
@@ -194,13 +387,12 @@
       opacity:0.85;
     }
 
-    /* imagem decorativa de grãos em background (quando tiveres beans-1.jpg no repo) */
     .hero-photo-main::before {
       content:"";
       position:absolute;
       inset:auto -40px -60px;
       height:160px;
-      background-image:url('beans-1.jpg');
+      background-image:url('beans-1.jpg'); /* optional coffee beans image */
       background-size:cover;
       background-position:center;
       opacity:0.18;
@@ -228,7 +420,6 @@
       background: var(--accent-green);
     }
 
-    /* SECTIONS */
     h2.section-title {
       font-size: 1.7rem;
       margin-bottom: 8px;
@@ -266,7 +457,6 @@
       color: var(--muted);
     }
 
-    /* grãos discretos em algumas cards (quando tiver beans-2.jpg) */
     .card.coffee-bg::after {
       content:"";
       position:absolute;
@@ -274,7 +464,7 @@
       bottom:-40px;
       width:140px;
       height:140px;
-      background-image:url('beans-2.jpg');
+      background-image:url('beans-2.jpg'); /* optional coffee beans image */
       background-size:cover;
       background-position:center;
       opacity:0.16;
@@ -332,7 +522,6 @@
       background:#f3e6d7;
     }
 
-    /* FLOATING CHAT BUTTON + CHATBOX */
     .chat-toggle {
       position: fixed;
       bottom: 18px;
@@ -510,13 +699,12 @@
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-photo { order:-1; }
-      nav { display:none; } /* mais simples no telemóvel */
+      nav { display:none; }
     }
   </style>
 </head>
 
 <body>
-  <!-- HEADER -->
   <header>
     <div class="nav">
       <div class="logo">
@@ -535,7 +723,6 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <main class="hero">
     <div class="container hero-inner">
       <div>
@@ -547,12 +734,10 @@
           Serving workplaces, schools, parks &amp; events across Jersey.
         </div>
         <div class="cta-row">
-          <!-- ⚠️ TROCAR O LINK PELO URL CERTO DA PÁGINA FACEBOOK -->
-          <a class="btn-primary" href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">
+          <a class="btn-primary" href="https://www.facebook.com/share/16yGoERCiQ/" target="_blank" rel="noopener">
             Message us on Facebook
           </a>
-          <!-- ⚠️ TROCAR ESTE PELO URL CERTO DO INSTAGRAM -->
-          <a class="btn-outline" href="YOUR_INSTAGRAM_URL_AQUI" target="_blank" rel="noopener">
+          <a class="btn-outline" href="https://www.instagram.com/the_bean_machine_jersey?igsh=eGk5b2k5anBmOGVk" target="_blank" rel="noopener">
             Follow on Instagram
           </a>
         </div>
@@ -564,9 +749,7 @@
           <span style="font-size:0.8rem; color:var(--muted);">Photo placeholder</span>
         </div>
         <div class="hero-photo-main">
-          <!-- Quando quiseres, substitui este texto por uma imagem real:
-               <img src="van-side.jpg" alt="The Bean Machine coffee van in Jersey"
-                    style="width:100%; border-radius:12px 12px 0 0; object-fit:cover; max-height:240px;"> -->
+          <!-- Replace this <span> with an <img> when you have a real van photo -->
           <span>Add your van photo here in the code (replace this text with an &lt;img&gt;).</span>
         </div>
         <div class="hero-photo-tag">
@@ -577,7 +760,6 @@
     </div>
   </main>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <h2 class="section-title">About The Bean Machine</h2>
@@ -602,11 +784,10 @@
     </div>
   </section>
 
-  <!-- MENU -->
   <section id="menu">
     <div class="container">
       <h2 class="section-title">Menu Highlights</h2>
-    <p class="section-sub">Exact menu may vary – follow us on Facebook and Instagram for specials and seasonal drinks.</p>
+      <p class="section-sub">Exact menu may vary – follow us on Facebook and Instagram for specials and seasonal drinks.</p>
 
       <div class="grid">
         <div class="card">
@@ -636,7 +817,6 @@
     </div>
   </section>
 
-  <!-- EVENTS -->
   <section id="events">
     <div class="container">
       <h2 class="section-title">Events &amp; Private Hire</h2>
@@ -665,7 +845,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Contact &amp; Social</h2>
@@ -674,12 +853,11 @@
       </p>
 
       <div class="card contact-card">
-        <!-- ⚠️ MESMOS LINKS DO TOPO -->
-        <p><strong>Facebook:</strong> <a href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">The Bean Machine Jersey</a></p>
-        <p><strong>Instagram:</strong> <a href="YOUR_INSTAGRAM_URL_AQUI" target="_blank" rel="noopener">@thebeanmachinejersey</a></p>
+        <p><strong>Facebook:</strong> <a href="https://www.facebook.com/share/16yGoERCiQ/" target="_blank" rel="noopener">The Bean Machine Jersey</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/the_bean_machine_jersey?igsh=eGk5b2k5anBmOGVk" target="_blank" rel="noopener">@the_bean_machine_jersey</a></p>
         <p><strong>Messenger:</strong> click the button below or use the chat bubble in the corner.</p>
         <div style="margin-top:12px;">
-          <a class="btn-primary" href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">
+          <a class="btn-primary" href="https://www.facebook.com/share/16yGoERCiQ/" target="_blank" rel="noopener">
             Open Facebook Page
           </a>
         </div>
@@ -691,13 +869,11 @@
     &copy; <span id="year"></span> The Bean Machine – Jersey, Channel Islands. All rights reserved.
   </footer>
 
-  <!-- BOTÃO REDONDO DO CHAT -->
   <button class="chat-toggle" id="chat-toggle" aria-label="Open Bean Machine assistant">
     <span>💬</span>
   </button>
   <div class="chat-toggle-label">Questions? Chat with us</div>
 
-  <!-- CHATBOX -->
   <div class="chatbox" id="chatbox" aria-live="polite">
     <div class="chatbox-header">
       <div class="chatbox-header-left">
@@ -730,7 +906,6 @@
   </div>
 
   <script>
-    // ano automático no footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const messagesEl = document.getElementById('chat-messages');
@@ -739,9 +914,8 @@
     const toggleBtn = document.getElementById('chat-toggle');
     const chatbox = document.getElementById('chatbox');
 
-    // ⚠️ Mete aqui os URLs correctos
-    const FACEBOOK_URL = 'YOUR_FACEBOOK_PAGE_URL_AQUI';
-    const INSTAGRAM_URL = 'YOUR_INSTAGRAM_URL_AQUI';
+    const FACEBOOK_URL = 'https://www.facebook.com/share/16yGoERCiQ/';
+    const INSTAGRAM_URL = 'https://www.instagram.com/the_bean_machine_jersey?igsh=eGk5b2k5anBmOGVk';
 
     function addMessage(role, text, html) {
       const wrap = document.createElement('div');
@@ -800,7 +974,6 @@
       }, 300);
     });
 
-    // quick replies
     messagesEl.addEventListener('click', function(e) {
       if (e.target.matches('button[data-q]')) {
         const text = e.target.getAttribute('data-q');
@@ -811,7 +984,6 @@
       }
     });
 
-    // abrir/fechar chat com a bolinha
     toggleBtn.addEventListener('click', () => {
       chatbox.classList.toggle('open');
     });
