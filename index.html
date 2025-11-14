@@ -551,7 +551,10 @@
           <a class="btn-primary" href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">
             Message us on Facebook
           </a>
-          <span class="btn-outline">Ask about availability for your event →</span>
+          <!-- ⚠️ TROCAR ESTE PELO URL CERTO DO INSTAGRAM -->
+          <a class="btn-outline" href="YOUR_INSTAGRAM_URL_AQUI" target="_blank" rel="noopener">
+            Follow on Instagram
+          </a>
         </div>
       </div>
 
@@ -568,7 +571,7 @@
         </div>
         <div class="hero-photo-tag">
           <div class="hero-photo-tag-dot"></div>
-          <span style="font-size:0.78rem;">Serving today around Jersey – check Facebook for location</span>
+          <span style="font-size:0.78rem;">Serving today around Jersey – check Facebook &amp; Instagram for location</span>
         </div>
       </aside>
     </div>
@@ -603,7 +606,7 @@
   <section id="menu">
     <div class="container">
       <h2 class="section-title">Menu Highlights</h2>
-      <p class="section-sub">Exact menu may vary – follow us on Facebook for specials and seasonal drinks.</p>
+    <p class="section-sub">Exact menu may vary – follow us on Facebook and Instagram for specials and seasonal drinks.</p>
 
       <div class="grid">
         <div class="card">
@@ -627,7 +630,7 @@
         </div>
         <div class="card coffee-bg">
           <div class="tag">Something Sweet</div>
-          <p>We often carry a small selection of pastries or treats. Check the counter or our Facebook posts for what’s on today.</p>
+          <p>We often carry a small selection of pastries or treats. Check the counter or our Facebook &amp; Instagram posts for what’s on today.</p>
         </div>
       </div>
     </div>
@@ -657,7 +660,7 @@
       </div>
 
       <p class="event-note">
-        To ask about dates, prices and options, send us a quick message on Facebook – we usually reply very quickly.
+        To ask about dates, prices and options, send us a quick message on Facebook or Instagram – we usually reply very quickly.
       </p>
     </div>
   </section>
@@ -667,12 +670,13 @@
     <div class="container">
       <h2 class="section-title">Contact &amp; Social</h2>
       <p class="section-sub">
-        The easiest way to reach us is through Facebook. Send us a message and we’ll get back to you as soon as we park the van.
+        The easiest way to reach us is through Facebook or Instagram. Send us a message and we’ll get back to you as soon as we park the van.
       </p>
 
       <div class="card contact-card">
-        <!-- ⚠️ MESMO LINK DO TOPO -->
+        <!-- ⚠️ MESMOS LINKS DO TOPO -->
         <p><strong>Facebook:</strong> <a href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">The Bean Machine Jersey</a></p>
+        <p><strong>Instagram:</strong> <a href="YOUR_INSTAGRAM_URL_AQUI" target="_blank" rel="noopener">@thebeanmachinejersey</a></p>
         <p><strong>Messenger:</strong> click the button below or use the chat bubble in the corner.</p>
         <div style="margin-top:12px;">
           <a class="btn-primary" href="YOUR_FACEBOOK_PAGE_URL_AQUI" target="_blank" rel="noopener">
@@ -735,8 +739,9 @@
     const toggleBtn = document.getElementById('chat-toggle');
     const chatbox = document.getElementById('chatbox');
 
-    // ⚠️ Mete aqui o URL correcto da página da Bean Machine
+    // ⚠️ Mete aqui os URLs correctos
     const FACEBOOK_URL = 'YOUR_FACEBOOK_PAGE_URL_AQUI';
+    const INSTAGRAM_URL = 'YOUR_INSTAGRAM_URL_AQUI';
 
     function addMessage(role, text, html) {
       const wrap = document.createElement('div');
@@ -767,16 +772,19 @@
       const t = userText.toLowerCase();
 
       if (t.includes('where') || t.includes('hoje') || t.includes('today') || t.includes('location')) {
-        return "We post our daily location and times on Facebook. Click the Messenger button to ask where we are today. " + fbButtonHTML();
+        return "We post our daily location and times on Facebook and Instagram. Click the Messenger button to ask where we are today. " + fbButtonHTML();
       }
       if (t.includes('event') || t.includes('hire') || t.includes('private')) {
         return "Yes, we do private events, office mornings and school fairs in Jersey. Tell us the date, place and number of people on Facebook and we’ll send you options. " + fbButtonHTML();
       }
       if (t.includes('menu') || t.includes('coffee') || t.includes('serve') || t.includes('price')) {
-        return "We serve espresso-based drinks (flat white, cappuccino, latte, americano), teas, hot chocolate and sometimes iced drinks & pastries. For full menu and prices, message us on Facebook. " + fbButtonHTML();
+        return "We serve espresso-based drinks (flat white, cappuccino, latte, americano), teas, hot chocolate and sometimes iced drinks & pastries. For full menu and prices, message us on Facebook or check Instagram. " + fbButtonHTML();
       }
       if (t.includes('facebook') || t.includes('messenger')) {
         return "Click the button below to open our Facebook page and send us a message. " + fbButtonHTML();
+      }
+      if (t.includes('instagram') || t.includes('insta')) {
+        return "You can also follow us on Instagram for photos and specials: " + INSTAGRAM_URL + ". " + fbButtonHTML();
       }
       return "Thanks for your message! For anything important (bookings, today’s location, prices), it’s best to send us a quick message on Facebook. " + fbButtonHTML();
     }
