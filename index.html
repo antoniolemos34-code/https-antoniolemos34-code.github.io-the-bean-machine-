@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Bean Machine Jersey – Mobile Coffee Van</title>
+  <title>The Bean Machine Jersey – Mobile Coffee Van | Speciality Coffee in Jersey</title>
 
-  <!-- BASIC SEO -->
-  <meta name="description" content="The Bean Machine Jersey – speciality coffee from a little black van everyone recognises. Serving workplaces, events and pop-ups all around Jersey, Channel Islands. Message us on Facebook to book the van.">
+  <!-- IMPROVED SEO -->
+  <meta name="description" content="The Bean Machine Jersey – speciality coffee from our iconic black van. Serving workplaces, events and pop-ups across Jersey, Channel Islands. Book now for your event or workplace.">
+  <meta name="keywords" content="coffee van jersey, mobile coffee jersey, speciality coffee jersey, bean machine jersey, coffee delivery jersey, event coffee jersey">
   <meta name="author" content="The Bean Machine Jersey">
+  <meta name="robots" content="index, follow">
 
   <!-- OPEN GRAPH (SOCIAL SHARE) -->
   <meta property="og:title" content="The Bean Machine Jersey – Mobile Coffee Van">
@@ -15,6 +17,70 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://antoniolemos34-code.github.io/https-antoniolemos34-code.github.io-the-bean-machine-/">
   <meta property="og:image" content="okvan-main.jpg">
+  <meta property="og:site_name" content="The Bean Machine Jersey">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Bean Machine Jersey – Mobile Coffee Van">
+  <meta name="twitter:description" content="Speciality coffee from a little black van everyone recognises in Jersey.">
+  <meta name="twitter:image" content="okvan-main.jpg">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <!-- SCHEMA MARKUP FOR LOCAL BUSINESS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "The Bean Machine Jersey",
+    "description": "Mobile coffee van serving speciality coffee in Jersey, Channel Islands",
+    "url": "https://antoniolemos34-code.github.io/https-antoniolemos34-code.github.io-the-bean-machine-/",
+    "servesCuisine": "Coffee, Tea, Hot Drinks",
+    "areaServed": "Jersey, Channel Islands",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Coffee Menu",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MenuItem",
+            "name": "Flat White"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MenuItem",
+            "name": "Latte & Cappuccino"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MenuItem",
+            "name": "Americano & Filter"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MenuItem",
+            "name": "Teas & Herbal Infusions"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "MenuItem",
+            "name": "Hot Chocolate"
+          }
+        }
+      ]
+    }
+  }
+  </script>
 
   <style>
     :root {
@@ -28,12 +94,17 @@
       --accent: #f4c28b;
       --radius-xl: 24px;
       --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.12);
+      --transition: all 0.3s ease;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -48,6 +119,7 @@
     img {
       max-width: 100%;
       display: block;
+      height: auto;
     }
 
     a {
@@ -55,9 +127,31 @@
       text-decoration: none;
     }
 
+    button, .btn-primary, .btn-secondary {
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
     .page {
       max-width: 1100px;
       margin: 0 auto 80px;
+    }
+
+    /* SKIP LINK FOR ACCESSIBILITY */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: var(--green-main);
+      color: white;
+      padding: 8px;
+      z-index: 100;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 6px;
     }
 
     /* HEADER */
@@ -67,6 +161,7 @@
       justify-content: space-between;
       gap: 16px;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
 
     .logo-block {
@@ -121,15 +216,17 @@
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(10px);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
-      transition: all 0.18s ease;
+      transition: var(--transition);
       white-space: nowrap;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a:focus {
       background: var(--green-main);
       color: #ffffff;
       border-color: var(--green-main);
       transform: translateY(-1px);
+      outline: none;
     }
 
     /* HERO */
@@ -250,13 +347,15 @@
       align-items: center;
       gap: 6px;
       box-shadow: 0 10px 18px rgba(32, 114, 90, 0.3);
-      transition: all 0.16s ease;
+      transition: var(--transition);
       text-decoration: none;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-primary:focus {
       transform: translateY(-1px);
       box-shadow: 0 14px 26px rgba(32, 114, 90, 0.4);
+      outline: none;
     }
 
     .btn-secondary {
@@ -269,14 +368,16 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.16s ease;
+      transition: var(--transition);
       text-decoration: none;
     }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover,
+    .btn-secondary:focus {
       background: #fdf9f3;
       transform: translateY(-1px);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      outline: none;
     }
 
     .hero-note {
@@ -545,18 +646,71 @@
       align-items: center;
       gap: 7px;
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
-      transition: all 0.15s ease;
+      transition: var(--transition);
     }
 
-    .social-row a:hover {
+    .social-row a:hover,
+    .social-row a:focus {
       background: #f3faf6;
       transform: translateY(-1px);
+      outline: none;
     }
 
     .section-note {
       font-size: 0.8rem;
       color: var(--text-soft);
       margin-top: 6px;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      margin-top: 15px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--coffee-brown);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(90, 59, 46, 0.2);
+      background: rgba(255, 255, 255, 0.8);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--green-main);
+      box-shadow: 0 0 0 2px rgba(32, 114, 90, 0.2);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-submit {
+      margin-top: 5px;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .footer {
@@ -584,6 +738,7 @@
       z-index: 50;
       color: #ffffff;
       font-size: 1.7rem;
+      transition: var(--transition);
     }
 
     .chat-fab::after {
@@ -597,11 +752,64 @@
       padding: 4px 8px;
       border-radius: 999px;
       white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .chat-fab:hover::after {
+      opacity: 1;
+    }
+
+    .chat-fab:focus {
+      outline: 2px solid var(--green-main);
+      outline-offset: 2px;
     }
 
     .chat-fab:active {
       transform: translateY(1px) scale(0.98);
       box-shadow: 0 10px 22px rgba(0, 0, 0, 0.55);
+    }
+
+    /* LOADING ANIMATION FOR IMAGES */
+    .lazy-load {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lazy-load.loaded {
+      opacity: 1;
+    }
+
+    /* BACK TO TOP BUTTON */
+    .back-to-top {
+      position: fixed;
+      bottom: 80px;
+      right: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--green-main);
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 49;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--green-soft);
+      transform: translateY(-2px);
     }
 
     @media (max-width: 820px) {
@@ -622,6 +830,10 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
       .chat-fab::after {
         display: none;
       }
@@ -639,22 +851,36 @@
       .section-card {
         border-radius: 18px;
       }
+
+      .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- SKIP LINK FOR ACCESSIBILITY -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <div class="page">
     <!-- HEADER -->
     <header class="site-header">
       <div class="logo-block">
-        <div class="logo-circle"></div>
+        <div class="logo-circle" aria-hidden="true"></div>
         <div>
           <div class="logo-text-main">The Bean Machine Jersey</div>
           <div class="logo-text-sub">Mobile coffee · Jersey, Channel Islands</div>
         </div>
       </div>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#events">Events</a>
@@ -663,11 +889,11 @@
     </header>
 
     <!-- HERO -->
-    <main>
+    <main id="main-content">
       <section class="hero-card">
         <div class="hero-left">
           <div class="hero-pill">
-            <span class="icon">🚐</span>
+            <span class="icon" aria-hidden="true">🚐</span>
             <span>MOBILE COFFEE · JERSEY</span>
           </div>
 
@@ -693,6 +919,7 @@
               class="btn-primary"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Message us on Facebook (opens in new tab)"
             >
               💬 Message us on Facebook
             </a>
@@ -702,8 +929,9 @@
               class="btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="See today's van on Instagram (opens in new tab)"
             >
-              📸 See today’s van on Instagram
+              📸 See today's van on Instagram
             </a>
           </div>
 
@@ -717,15 +945,20 @@
         <div class="hero-right">
           <div class="hero-photo-card">
             <div class="hero-photo-main">
-              <img src="okvan-main.jpg" alt="The Bean Machine mobile coffee van in Jersey" />
-              <div class="bean-badge">☕</div>
+              <img 
+                src="okvan-main.jpg" 
+                alt="The Bean Machine mobile coffee van parked in Jersey with coffee being served" 
+                class="lazy-load"
+                loading="lazy"
+              />
+              <div class="bean-badge" aria-hidden="true">☕</div>
             </div>
 
             <div class="hero-photo-content">
               <div class="hero-photo-text">
                 <div class="hero-photo-title">Serving around Jersey</div>
                 <div class="hero-photo-tag">
-                  <span>⭐</span>
+                  <span aria-hidden="true">⭐</span>
                   <span>Speciality coffee & treats</span>
                 </div>
               </div>
@@ -743,7 +976,7 @@
         <div class="section-card">
           <h2 class="section-title">Coffee that finds you</h2>
           <p class="section-sub">
-            The Bean Machine Jersey brings café-quality coffee directly to you – whether you’re at the
+            The Bean Machine Jersey brings café-quality coffee directly to you – whether you're at the
             office, on a building site, at a school fair or relaxing at a weekend event.
           </p>
 
@@ -799,7 +1032,7 @@
 
           <p class="menu-small">
             Looking for something specific for your event (vegan milk, custom drink, branded cups)?
-            Tell us in your Facebook message and we’ll see what we can do.
+            Tell us in your Facebook message and we'll see what we can do.
           </p>
         </div>
       </section>
@@ -815,15 +1048,30 @@
 
           <div class="gallery">
             <div class="gallery-tile">
-              <img src="Insidevan.jpg" alt="Inside The Bean Machine coffee van in Jersey" />
+              <img 
+                src="Insidevan.jpg" 
+                alt="Inside The Bean Machine coffee van showing coffee equipment" 
+                class="lazy-load"
+                loading="lazy"
+              />
               <div class="gallery-tag">Inside the van</div>
             </div>
             <div class="gallery-tile">
-              <img src="Van.jpg" alt="The Bean Machine coffee van at an event in Jersey" />
+              <img 
+                src="Van.jpg" 
+                alt="The Bean Machine coffee van at an event in Jersey" 
+                class="lazy-load"
+                loading="lazy"
+              />
               <div class="gallery-tag">Van at events</div>
             </div>
             <div class="gallery-tile">
-              <img src="okvan-main.jpg" alt="Little black coffee van in Jersey" />
+              <img 
+                src="okvan-main.jpg" 
+                alt="Little black coffee van in Jersey" 
+                class="lazy-load"
+                loading="lazy"
+              />
               <div class="gallery-tag">Little black van</div>
             </div>
           </div>
@@ -853,17 +1101,62 @@
       <!-- CONTACT -->
       <section id="contact" class="section single">
         <div class="section-card">
-          <h2 class="section-title">Let’s plan coffee at your place</h2>
+          <h2 class="section-title">Let's plan coffee at your place</h2>
           <p class="section-sub">
-            The fastest way to reach us is by Facebook Messenger. Tap the button below to open a chat –
-            we’ll reply as soon as we can between serves.
+            The fastest way to reach us is by Facebook Messenger. You can also use the form below for inquiries.
           </p>
+
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="event-type">Type of Event</label>
+              <select id="event-type" name="event-type">
+                <option value="">Select an option</option>
+                <option value="workplace">Workplace/Office</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="school">School/Community Event</option>
+                <option value="private">Private Celebration</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+                <input type="date" id="date" name="date">
+              </div>
+              <div class="form-group">
+                <label for="people">Estimated Number of People</label>
+                <input type="number" id="people" name="people" min="1">
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell us about your event, location, and any special requirements..."></textarea>
+            </div>
+            
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">Send Inquiry</button>
+            </div>
+          </div>
 
           <div class="social-row">
             <a
               href="https://www.facebook.com/share/16yGoERCiQ/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Message us on Facebook (opens in new tab)"
             >
               💬 Message us on Facebook
             </a>
@@ -871,6 +1164,7 @@
               href="https://www.instagram.com/the_bean_machine_jersey?igsh=eGk5b2k5anBmOGVk"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow us on Instagram (opens in new tab)"
             >
               📸 Follow us on Instagram
             </a>
@@ -878,7 +1172,7 @@
 
           <p class="section-note">
             When messaging, please tell us: date, time window, location in Jersey, type of event and
-            approximate number of people. We’ll confirm availability and details with you.
+            approximate number of people. We'll confirm availability and details with you.
           </p>
         </div>
       </section>
@@ -890,17 +1184,115 @@
     </main>
   </div>
 
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+
   <!-- FLOATING CHAT BUBBLE (opens Facebook Messenger link) -->
   <button class="chat-fab" aria-label="Chat with The Bean Machine on Facebook">
     💬
   </button>
 
   <script>
+    // Messenger URL
     const messengerUrl = "https://www.facebook.com/share/16yGoERCiQ/";
 
+    // Chat button functionality
     document.querySelector(".chat-fab").addEventListener("click", () => {
       window.open(messengerUrl, "_blank", "noopener");
     });
+
+    // Back to top button functionality
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Form submission handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // In a real implementation, you would send this data to a server
+        // For now, we'll just open the messenger with a pre-filled message
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const eventType = formData.get('event-type');
+        const date = formData.get('date');
+        const people = formData.get('people');
+        const message = formData.get('message');
+        
+        let prefillMessage = `Hello! My name is ${name}. `;
+        if (eventType) prefillMessage += `I'm interested in booking for a ${eventType} event. `;
+        if (date) prefillMessage += `Preferred date: ${date}. `;
+        if (people) prefillMessage += `Estimated number of people: ${people}. `;
+        if (message) prefillMessage += `Additional details: ${message}`;
+        
+        // Encode the message for URL
+        const encodedMessage = encodeURIComponent(prefillMessage);
+        const messengerUrlWithMessage = `${messengerUrl}?text=${encodedMessage}`;
+        
+        // Open messenger with pre-filled message
+        window.open(messengerUrlWithMessage, '_blank', 'noopener');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Show confirmation (in a real app, you might want a more sophisticated approach)
+        alert('Thank you for your inquiry! We\'ve opened Facebook Messenger with your details pre-filled. Please send the message to contact us.');
+      });
+    }
+
+    // Lazy loading images
+    document.addEventListener('DOMContentLoaded', function() {
+      const lazyImages = document.querySelectorAll('.lazy-load');
+      
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.add('loaded');
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        imageObserver.observe(img);
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 20,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   </script>
 </body>
-</html>
+                  </html>
